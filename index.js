@@ -1,5 +1,4 @@
 const axios = require('axios').default;
-const { error } = require('console');
 const https = require('https');
 const url = "https://api.spotify.com/artists/v1/";
 var artistID;
@@ -10,11 +9,12 @@ artistID = artistIDs[0]
 var fullURL = url + artistID;
 const token = '81622b79b05140edb4ae346de740b27c';
 
-const config = {
+const options = {
   headers: {
     "Authorization": 'Bearer' + token
   }
-}
+};
+
 async function request(){
   try {
     const res = await axios.get(fullURL, {
@@ -27,4 +27,5 @@ async function request(){
   console.log(this.res);
 }
 
-request()
+
+request();
