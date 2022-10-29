@@ -9,28 +9,43 @@ var XMLHttpRequest = require('xhr2');
 var xhr = new XMLHttpRequest();
 const https = require('https');
 
-const url = "https://api.spotify.com/v1/artists/"
+const url = "https://api.spotify.com/v1/artists/?ids="
 const halfURL = "/v1/artists/id/"; 
 var artistID;
 
 const refreshToken = "AQCysJzq9qXoarN2MSGsRLbkd76hDhMknH3E2L2A-_Qhdloa5jKVeISQjdjLeU7y0uc0QZTbgNt2KB5Lr9ty2zUZugLwQIBbd1vdjF8Bj4VljaqnCOiES1uiF_zZBHuqUh8dEP4-0_sqg4-IoFRD9_Q86w75JjicJPWOSl-KgaVNkP7IfbfXzJsGm00kHDHTBTWuR2whU1iT9K7GrmjfmI_J2AiMreFqmUzNH8FocnIK523ztECx9_eOFlSa-kFIbpXdUuZwPlmKNzFezwRcz7gKeCmon_xTOz2Ya3aoCXHMT7ZAiDz1k5MNCA5c0leljeu_BbCeunTtJ2RfCU5bUU5ZiG-c5532Tv9MVC4Bl0Ezyml5gDgCGJgh15sjAtDbAOZSrhIs6jyFBX6HtbEoiqvCFnC-ZrXVLaUBR_2FVAN0i4CpF2EMNfRe8GMWRKkWzs0PUt0EVejxoqaTOiC8WW8WzlQf1TqvM3V5cvMGUIDoxZeIPo95T9xuafQVVE3eAWWHFdANpKzZ6YNlF_rTTPyzVvtX2Yt-ssqC95y3-51oe9HYIQwf6MU82Qw54TQIqDKtBO3j5TpsP4DDfngZE11owirESehw30lG-u4DUUHT8QMxnjLTDWH4PfvZlW_jWFaBopPIsmxREnbk7ankN0BfNU1PtWFL0xsZkjzZfoGlaJHTmJ0yf1Qc0RTU5ffPTZCFa4H9pYCJrEiSRXuww_dQTmfKUod8X0jnPv_uV0qz427yl53qr04";
 
 var artistIDs = ["4NOFcRCgjvnRy8nKVGUM0L", // steveruu
-                "1NspLfgAsucc39MeTipXNy", // CYREX
-                "3GuGHOzPZ0AhH9hK8LqCsK", // JDSLVT
-                "2aZD8xH5DKRUwAR6mXAifV", // HKS
-                "", // Avicii
-                "1vCWHaC5f2uS3yhpwWbIA6", // Avicii
-                "1vCWHaC5f2uS3yhpwWbIA6", // Avicii
-                "1vCWHaC5f2uS3yhpwWbIA6", // Avicii
-                "1vCWHaC5f2uS3yhpwWbIA6", // Avicii
-                "1vCWHaC5f2uS3yhpwWbIA6" // Avicii
+                "1NspLfgAsucc39MeTipXNy", // car
+                "3GuGHOzPZ0AhH9hK8LqCsK", // pepap
+                "2aZD8xH5DKRUwAR6mXAifV", // hakaslakas
+                "3xVvsXvpURgj3zeTYiBtCv", // valian
+                "2b5QC4KWCMRKdD7LiqvfMQ", // faon
+                "50ENuvgRkFZ5hMA0BFEeAM", // helena
+                "2qSLwqeQFUHWEzC86u3vRM", // awoken
+                "6kEMNp6TPPl70gOicGT0uN", // děcko acid
+                "3D57Cu0cu9caAvtl41xUx6", // samzel
+                "5QvicxsGxXNicXu1f9guia", // yui paly
+                "70Cg3NKGzk0G16trbrfYE5", // maria
+                "1HbkAuG6cZndTXlORaQgOq", // ubránek
+                "3tjBt96Yk1zS14xc8wldlT", // fembo ypl a
+                "5NTcWbyHYQjA20voWilXeG", // kila asky
+                "7h22ZneYwwRyOwlgnMd8So", // akarlos
+                "5PNDGjJ1e6Tdr8LWmZDqPO", // ne duch
+                "0IM0lwjzI0BYaayMweraKT", // matmej
+                "34YDbjVGCySBRPAS19xl1L", // paply adomi
+                "2IIf5hkbIzh1dqhG1T132E", // krobra08
+                "3TTWuZxamiQERzR42VNMS5", // sopka
+                "6UIdgISBaIHMOvWwz4nfP1", // prasak
+                "569eihmWcdg4HvSPDnjlPn" // ondredaj
                 ]
 artistID = artistIDs[0]
 
+var artists = artistIDs.toString();
+
 var halfFullURL = halfURL + artistID;
-var fullURL = url + artistID;
-var token = 'BQBM40YsmZtngXEbeQ3G1rj1g55vN_55jIbCW8pe2yeLEci60RejqQZst7iVK6QRYyb4UW98cnsfMJTtIp5IJytaQzUDPP88CBOlLqRzNumBNiBAiFVne9RXxQ4HGmSkTs4WfXPyf92TYCq1HtPVEkL-J-3z83NOHCihqFPwx6zr_WEoj8A_QKVni18VZr8HarY1HURSvs2XL6Ue_6M';
+var fullURL = url + artists;
+var token = 'BQCjBPXqQLZ0Dq0LwWztst5-fKzloeF1FAR6uflY92zJLyZ7NluNkIUs4b_obm04ok-idkcxjsBADmkR4iodzoGpPt2lc46ScASMNJ4nmChJJC8nyPgoePBYHb2D3PT1ced-z01-0090MPJb82DfZXkVYuD9EprY7SNNYZIXGckSTqOSckWWPy-MKrQ9IWICEjalH7KXXmHar6k2nXk';
 
 function requestArtist() {    // tohle celý by se později mohlo zautomatizovat nějakým použitím array.forEach, kde to vezme všechny artisty z arraye
   xhr.open("GET", fullURL, true);   // a udělá tenhle celej process pro každýho z nich 
@@ -95,5 +110,14 @@ readline.question('\nEnter callback URL: ', name => {
 
 } 
 
-requestArtist(); // tady později udělat userInput switch mezi reqUA() a requestArtist() funkcema 
+readline.question("1: request artists, 2: token change. ", name => {
+  if(name == "1") {
+      requestArtist();
+  } else if(name == "2") {
+      reqUA();
+  } else {
+    return;
+  }
+});
+
 
