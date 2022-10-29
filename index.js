@@ -45,25 +45,39 @@ var artists = artistIDs.toString();
 
 var halfFullURL = halfURL + artistID;
 var fullURL = url + artists;
-var token = 'BQCjBPXqQLZ0Dq0LwWztst5-fKzloeF1FAR6uflY92zJLyZ7NluNkIUs4b_obm04ok-idkcxjsBADmkR4iodzoGpPt2lc46ScASMNJ4nmChJJC8nyPgoePBYHb2D3PT1ced-z01-0090MPJb82DfZXkVYuD9EprY7SNNYZIXGckSTqOSckWWPy-MKrQ9IWICEjalH7KXXmHar6k2nXk';
+var token = 'BQAQY4Y5bGP58zQ4eiZTm1kl9GyVf00ncx7aQj-3kVWFGW4puLDWaQg2eBdk8fAmxiBihGSpBi9N5WSTkuCAXtRhM3d7f8l8pYFAhmw_CkdaxqwykHZGJtGjvdF7unVKm_0D9oc57lRnM9QXQ9wXR4SK2e6MVvjciJucYJCtfFhyq9_hlRd0BLu7IkKiZS82q0T3eJCl2CTdth8tNIA';
 
-function requestArtist() {    // tohle celý by se později mohlo zautomatizovat nějakým použitím array.forEach, kde to vezme všechny artisty z arraye
+function requestArtists() {    // tohle celý by se později mohlo zautomatizovat nějakým použitím array.forEach, kde to vezme všechny artisty z arraye
   xhr.open("GET", fullURL, true);   // a udělá tenhle celej process pro každýho z nich 
   xhr.setRequestHeader('Accept', 'application/json');
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.setRequestHeader('Authorization', `Bearer ${token}`);
 
-  var result = '';
-
   xhr.onreadystatechange = function () {        // a nebo request GET SEVERAL ARTISTS
     if (xhr.readyState === 4) {                 // další varianta
         console.log(xhr.status);
-        console.log(xhr.responseText);
-    }};
+        
+        var result = JSON.parse(xhr.responseText);
+        
+        var posluchaciInteger = result.artists.map(function(x){
+          return x.popularity;
+        });
+        
+        var artistNames = result.artists.map(function(y){
+          return y.name;
+        });
+              
 
+        for (let i = 0; i < artistNames.length; i++){
+          console.log(artistNames[i], posluchaciInteger[i]);
+        }
+    }
+  }
+  
   xhr.send();
   xhr.onload;
-}
+    return;
+};
 
 function swapToken() {
   xhr.open("POST", "https://api.spotify.com/v1/swap")
@@ -102,18 +116,22 @@ readline.question('\nEnter callback URL: ', name => {
   var trimmedToken = name.slice(41,252)
   if((name.startsWith("https"))) {
     console.log(`\nYour token is: ${trimmedToken}`);
+    console.log(`\nPlease update var token on line 48.`);
     readline.close();
   } else {
-  console.log(`Please enter a valid URL`);
+  console.log(`\nPlease enter a valid URL.`);
   readline.close();
+    return;
 }});
 
 } 
 
 readline.question("1: request artists, 2: token change. ", name => {
   if(name == "1") {
-      requestArtist();
+      console.log()  
+      requestArtists();
   } else if(name == "2") {
+      console.log() 
       reqUA();
   } else {
     return;
