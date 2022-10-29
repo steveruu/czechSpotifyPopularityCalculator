@@ -18,6 +18,12 @@ const refreshToken = "AQCysJzq9qXoarN2MSGsRLbkd76hDhMknH3E2L2A-_Qhdloa5jKVeISQjd
 var artistIDs = ["4NOFcRCgjvnRy8nKVGUM0L", // steveruu
                 "1NspLfgAsucc39MeTipXNy", // CYREX
                 "3GuGHOzPZ0AhH9hK8LqCsK", // JDSLVT
+                "2aZD8xH5DKRUwAR6mXAifV", // HKS
+                "", // Avicii
+                "1vCWHaC5f2uS3yhpwWbIA6", // Avicii
+                "1vCWHaC5f2uS3yhpwWbIA6", // Avicii
+                "1vCWHaC5f2uS3yhpwWbIA6", // Avicii
+                "1vCWHaC5f2uS3yhpwWbIA6", // Avicii
                 "1vCWHaC5f2uS3yhpwWbIA6" // Avicii
                 ]
 artistID = artistIDs[0]
