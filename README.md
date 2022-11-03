@@ -1,8 +1,7 @@
 # czechSpotifyPopularityCalculator
-spotify czech artist sorting algorithm
+spotify czech artist spotify sorting algorithm
 
-# what am i doing
-- this is pain pain pain pain
-- why can't i use ajax in node
-- pain eternal pain eternal pain
-- i hate working with APIs 
+# WARNING!⚠️
+* this code is meant to be for private-use only
+* do not use this code, unless you know what you are doing
+* you can clone it and create your own versions, although i bet nobody's gonna do that
