@@ -3,17 +3,10 @@ const readline = require('readline').createInterface({
   output: process.stdout
 });
 
-const axios = require('axios').default;
-
 var XMLHttpRequest = require('xhr2');
 var xhr = new XMLHttpRequest();
-const https = require('https');
 
 const url = "https://api.spotify.com/v1/artists/?ids="
-const halfURL = "/v1/artists/id/"; 
-var artistID;
-
-const refreshToken = "AQCysJzq9qXoarN2MSGsRLbkd76hDhMknH3E2L2A-_Qhdloa5jKVeISQjdjLeU7y0uc0QZTbgNt2KB5Lr9ty2zUZugLwQIBbd1vdjF8Bj4VljaqnCOiES1uiF_zZBHuqUh8dEP4-0_sqg4-IoFRD9_Q86w75JjicJPWOSl-KgaVNkP7IfbfXzJsGm00kHDHTBTWuR2whU1iT9K7GrmjfmI_J2AiMreFqmUzNH8FocnIK523ztECx9_eOFlSa-kFIbpXdUuZwPlmKNzFezwRcz7gKeCmon_xTOz2Ya3aoCXHMT7ZAiDz1k5MNCA5c0leljeu_BbCeunTtJ2RfCU5bUU5ZiG-c5532Tv9MVC4Bl0Ezyml5gDgCGJgh15sjAtDbAOZSrhIs6jyFBX6HtbEoiqvCFnC-ZrXVLaUBR_2FVAN0i4CpF2EMNfRe8GMWRKkWzs0PUt0EVejxoqaTOiC8WW8WzlQf1TqvM3V5cvMGUIDoxZeIPo95T9xuafQVVE3eAWWHFdANpKzZ6YNlF_rTTPyzVvtX2Yt-ssqC95y3-51oe9HYIQwf6MU82Qw54TQIqDKtBO3j5TpsP4DDfngZE11owirESehw30lG-u4DUUHT8QMxnjLTDWH4PfvZlW_jWFaBopPIsmxREnbk7ankN0BfNU1PtWFL0xsZkjzZfoGlaJHTmJ0yf1Qc0RTU5ffPTZCFa4H9pYCJrEiSRXuww_dQTmfKUod8X0jnPv_uV0qz427yl53qr04";
 
 var artistIDs = ["4NOFcRCgjvnRy8nKVGUM0L", // steveruu
                 "1NspLfgAsucc39MeTipXNy", // car
@@ -39,11 +32,9 @@ var artistIDs = ["4NOFcRCgjvnRy8nKVGUM0L", // steveruu
                 "6UIdgISBaIHMOvWwz4nfP1", // prasak
                 "569eihmWcdg4HvSPDnjlPn" // ondredaj
                 ]
-artistID = artistIDs[0]
 
 var artists = artistIDs.toString();
 
-var halfFullURL = halfURL + artistID;
 var fullURL = url + artists;
 var token = 'BQC964hWY2DoOwrz9PXFn2-LdyZ83c-FOmH3nTQCC1Hi2ihYrBTO--YMi8CxSKBaIXJ7HTJn695ujW6oP8TGxLHlGT8upCFl1rUmDs9iDW-CNYmjt3imIDFnIcW7IqOfc01RfUXiZLZ-VrfJdxOGCx0dYjZsAozTzXHBpehmSi9uPR5emWCMiBMw-wmJhkRc2FHqwko-PIGdv7Y9GCI';
 
@@ -75,7 +66,8 @@ function requestArtists() {    // tohle celý by se později mohlo zautomatizova
               ready_artist[k][1] = posluchaciInteger[k]; // -//- ->
           }
 
-          console.log(ready_artist);
+          var sortedList = ready_artist.sort(function(a,b){return b[1] - a[1]})
+          console.log(sortedList);
           
     }
   }
