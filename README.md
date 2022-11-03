@@ -6,5 +6,3 @@ spotify czech artist sorting algorithm
 - why can't i use ajax in node
 - pain eternal pain eternal pain
 - i hate working with APIs 
-
-# TypeError: Cannot read properties of undefined (reading 'get')
