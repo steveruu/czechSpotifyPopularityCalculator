@@ -45,7 +45,7 @@ var artists = artistIDs.toString();
 
 var halfFullURL = halfURL + artistID;
 var fullURL = url + artists;
-var token = 'BQB8fddKMoCP_lYAVaF778wASQzxiO2J49GWC-wtvtAMXe31fiaTwm9Xb9aXgpa0ugHAv_e-tchpnXfi9Aabbtk2uIZytqJAzlsHCSZirUTabuY_tlKT7krBqQ9d32JgxH8f1q2p79fWxZwPgovf7lTI-dM22cMNKGNdfrV1ue544GUh8cW011aToxrXby84T64oeNd-43Vg3gNhnl0';
+var token = 'BQC964hWY2DoOwrz9PXFn2-LdyZ83c-FOmH3nTQCC1Hi2ihYrBTO--YMi8CxSKBaIXJ7HTJn695ujW6oP8TGxLHlGT8upCFl1rUmDs9iDW-CNYmjt3imIDFnIcW7IqOfc01RfUXiZLZ-VrfJdxOGCx0dYjZsAozTzXHBpehmSi9uPR5emWCMiBMw-wmJhkRc2FHqwko-PIGdv7Y9GCI';
 
 function requestArtists() {    // tohle celý by se později mohlo zautomatizovat nějakým použitím array.forEach, kde to vezme všechny artisty z arraye
   xhr.open("GET", fullURL, true);   // a udělá tenhle celej process pro každýho z nich 
@@ -59,18 +59,24 @@ function requestArtists() {    // tohle celý by se později mohlo zautomatizova
         
         var result = JSON.parse(xhr.responseText);
         
-        var posluchaciInteger = result.artists.map(function(x){
+        let posluchaciInteger = result.artists.map(function(x){
           return x.popularity;
         });
         
-        var artistNames = result.artists.map(function(y){
+        let artistNames = result.artists.map(function(y){
           return y.name;
         });
-              
 
-        for (let i = 0; i < artistNames.length; i++){
-          console.log(artistNames[i], posluchaciInteger[i]);
-        }
+          var ready_artist = [];
+
+          for (var k = 0; k < 23; k++) {
+              ready_artist[k] = ["", 0];
+              ready_artist[k][0] = artistNames[k]; // sem misto 0 dat k; k = (1-23); jak udelat aby to precetlo jako var, ne jako array
+              ready_artist[k][1] = posluchaciInteger[k]; // -//- ->
+          }
+
+          console.log(ready_artist);
+          
     }
   }
   
