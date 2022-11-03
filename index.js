@@ -47,7 +47,7 @@ function requestArtists() {    // tohle celý by se později mohlo zautomatizova
   xhr.onreadystatechange = function () {        // a nebo request GET SEVERAL ARTISTS
     if (xhr.readyState === 4) {                 // další varianta
         console.log(xhr.status);
-        
+        if (xhr.status != 200) {return;}
         var result = JSON.parse(xhr.responseText);
         
         let posluchaciInteger = result.artists.map(function(x){
