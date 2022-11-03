@@ -114,7 +114,7 @@ readline.question('\nEnter callback URL: ', name => {
   var trimmedToken = name.slice(41,252)
   if((name.startsWith("https"))) {
     console.log(`\nYour token is: ${trimmedToken}`);
-    console.log(`\nPlease update var token on line 48.`);
+    console.log(`\nPlease update var token on line 39.`);
     readline.close();
   } else {
   console.log(`\nPlease enter a valid URL.`);
