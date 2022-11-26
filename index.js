@@ -93,7 +93,7 @@ xhr.send();
 
 function reqUA() {
   var client_id = 'af1a22f02ecc4371bec205f62966ebb9';
-  var redirect_uri = 'https://steveruu.github.io';
+  var redirect_uri = 'https://steveruu.github.io/callback';
 
   var state = 'aBcDEFghIjklM4OP';
 
@@ -110,18 +110,7 @@ function reqUA() {
   console.log(url) 
 
 // uwu program 
-readline.question('\nEnter callback URL: ', name => {
-  var trimmedToken = name.slice(41,252)
-  if((name.startsWith("https"))) {
-    console.log(`\nYour token is: ${trimmedToken}`);
-    console.log(`\nPlease update var token on line 39.`);
-    readline.close();
-  } else {
-  console.log(`\nPlease enter a valid URL.`);
-  readline.close();
-    return;
-}});
-
+  console.log(`\ncopy callbackToken, replace token on line 39`);
 } 
 
 readline.question("1: request artists, 2: token change. ", name => {
