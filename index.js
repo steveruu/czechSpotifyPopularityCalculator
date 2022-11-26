@@ -36,7 +36,7 @@ var artistIDs = ["4NOFcRCgjvnRy8nKVGUM0L", // steveruu
 var artists = artistIDs.toString();
 
 var fullURL = url + artists;
-var token = 'BQC964hWY2DoOwrz9PXFn2-LdyZ83c-FOmH3nTQCC1Hi2ihYrBTO--YMi8CxSKBaIXJ7HTJn695ujW6oP8TGxLHlGT8upCFl1rUmDs9iDW-CNYmjt3imIDFnIcW7IqOfc01RfUXiZLZ-VrfJdxOGCx0dYjZsAozTzXHBpehmSi9uPR5emWCMiBMw-wmJhkRc2FHqwko-PIGdv7Y9GCI';
+var token = 'BQDtzfTIxXLXqIyJrebSVxinKVywJG3fCs_eVx_YeTgZhNqVPoa-rskhezP_b28HOSo8Qp3ZysiYTCc-yewCLCNICtsC4qsN7njjVXszaMLLrMHPnFrmGRGIWhMdeh4QIYkec1y_KD1nLVaMn-e3QwJ2lILJTWLICV5aKe7W_gioij1S8wDdNEECEleQQMdtT0NKUBRSQWyUfryyiNo';
 
 function requestArtists() {    // tohle celý by se později mohlo zautomatizovat nějakým použitím array.forEach, kde to vezme všechny artisty z arraye
   xhr.open("GET", fullURL, true);   // a udělá tenhle celej process pro každýho z nich 
