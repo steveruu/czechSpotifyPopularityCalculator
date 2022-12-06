@@ -1,5 +1,5 @@
 # czechSpotifyPopularityCalculator
-spotify czech artist spotify sorting algorithm making use of the spotify api
+spotify czech artist spotify sorting algorithm making use of the spotify api  
 now replaced with [this](https://github.com/steveruu/spotifymlscraper)
 
 # WARNING!⚠️
